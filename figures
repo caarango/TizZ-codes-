@@ -1,0 +1,324 @@
+
+\begin{figure}
+    \centering
+\begin{tikzpicture}
+%figure 1
+
+    \Vertex[label=$ \mathrm{M}_1$, x=0, y=4.25, opacity=0.2,color=black]{A11} 
+    \Vertex[label=$ \mathrm{M}_0$,x=2,y=4.25, opacity=0.2, color=black]{B11}
+    \Edge[style=red](A11)(B11)
+    \Text[x=2.5,y=5.25]{(a)}
+
+
+%figure 2    
+    \Vertex[label=${ \mathrm{M}_{12}}$,x=4, y=4.25,opacity=0.2, color=black]{A22} \Vertex[label=${ \mathrm{M}_2}$,x=6,y=5.25,opacity=0.2,color=black]{B22}
+    \Vertex[label=${ \mathrm{M}_1}$,x=6,y=3.25,opacity=0.2, color=black]{C22}
+    \Vertex[label=${ \mathrm{M}_0}$,x=8,y=4.25,opacity=0.2, color=black]{D22}
+    \Edge[style=red,fontcolor=black](A22)(B22) 
+    \Edge[style=green,fontcolor=black](A22)(C22) 
+    \Edge[style=gray,fontcolor=black](B22)(C22) 
+    \Edge[style=green,fontcolor=black](B22)(D22) 
+    \Edge[style=red,fontcolor=black](C22)(D22)
+    \Text[x=8.5,y=5.25]{(b)}
+
+%figure 3
+
+    \Vertex[label=${ \mathrm{M}_{ {S}_3}}$,opacity=0.2,color=black]{A} \Vertex[label=${ \mathrm{M}_{23}}$,x=2,y=2,opacity=0.2,color=black]{B1}
+    \Vertex[label=${ \mathrm{M}_{13}}$,x=3,y=0,opacity=0.2,color=black]{B2}
+    \Vertex[label=${ \mathrm{M}_{12}}$,x=2,y=-2,opacity=0.2,color=black]{B3}
+    \Vertex[label=${ \mathrm{M}_3}$,x=6,y=2,opacity=0.2,color=black]{C1}
+    \Vertex[label=$ \mathrm{M}_2$,x=5,y=0,opacity=0.2,color=black]{C2}
+    \Vertex[label=$ \mathrm{M}_1$,x=6,y=-2,opacity=0.2,color=black]{C3}
+    \Vertex[label=$ \mathrm{M}_0$,x=8,y=0,opacity=0.2,color=black]{D}
+
+    \Edge[style=red](A)(B1)
+    \Edge[style={gray,dashed}](B1)(B3)
+    \Edge[style=green](A)(B2)
+    \Edge[style=blue](A)(B3)
+    \Edge[style=gray](B1)(B2)
+    \Edge[style=gray](B2)(B3)
+
+    \Edge[style=green](B1)(C1)
+    \Edge[style={blue,dashed}](B1)(C2)
+    \Edge[style=red](B2)(C1)
+
+    \Edge[style={red,dashed}](B3)(C2)
+    \Edge[style=blue](B2)(C3)
+    \Edge[style=green](B3)(C3) 
+
+    \Edge[style={gray,dashed}](C1)(C2)
+    \Edge[style={green,dashed}](C2)(D)
+    \Edge[style=gray](C1)(C3)
+    \Edge[style={gray,dashed}](C2)(C3)
+    
+    \Edge[style=blue](C1)(D)
+    \Edge[style=red](C3)(D)
+    \Text[x=8.5,y=1]{(c)}
+
+    \end{tikzpicture}
+    \caption{Dissociation graphs of some polyprotic acids. (a) Monoprotic acid; (b) Diprotic acid; (c) Triprotic acid. Red, green and blue edges represent the deprotonation/protonation of protons (1), (2), and (3), respectively, gray edges represent tautomerizations. Dashed edges are used to facilitate the visualization of $G_3$.}
+    \label{fig:polyprotic_graphs}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \begin{tikzpicture}
+% box 1    
+        \Vertex[label=$ \mathrm{M}_{1}$,x=0,y=0,opacity=0.2,color=black]{M1}
+        \Vertex[label=$ \mathrm{M}_{0}$,x=0,y=2,opacity=0.2,color=black]{M2}
+        \Vertex[Pseudo,x=0.,y=0.75,color=white]{Mr1}
+        \Vertex[Pseudo,x=0.,y=1.25,color=white]{Mr2}
+        \Edge[style=red](M1)(M2)
+%box 2        
+        \Vertex[label=$ \mathrm{M}_{0}$,x=2,y=0,opacity=0.2,color=black]{M0a}
+        \Vertex[label=$ \mathrm{M}_{1}$,x=2,y=2,opacity=0.2,color=black]{M1a}
+        \Vertex[Pseudo,x=2,y=0.75,color=white]{Mla1}
+        \Vertex[Pseudo,x=2,y=1.25,color=white]{Mla2}
+        \Edge[style=red](M0a)(M1a)
+
+% Permutations and rotations
+    \Edge[Direct,lw=2.5,color=blue!60](Mr1)(Mla1)
+    \Text[x=1,y=0.45]{$\sigma_{10}$}
+    \Edge[Direct,lw=2.5,color=blue!60](Mla2)(Mr2)
+    \Text[x=1,y=1.55]{$\sigma_{10}$}
+    
+    \end{tikzpicture}
+    \caption{Effect of the permutations $\sigma_{10}$ on the graph $G_1$.}
+    \label{fig:sigma_monoprotic}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \begin{tikzpicture}
+% box 1    
+        \Vertex[label=$ \mathrm{M}_{12}$,x=-2,y=4,opacity=0.2,color=black]{M12}
+        \Vertex[label=$ \mathrm{M}_{2}$,x=-2,y=6,opacity=0.2,color=black]{M2}
+        \Vertex[label=$ \mathrm{M}_{1}$,x=0,y=4,opacity=0.2,color=black]{M1}
+        \Vertex[label=$ \mathrm{M}_{0}$,x=0,y=6,opacity=0.2,color=black]{M0}
+        \Vertex[Pseudo,x=-1,y=2.,color=white]{Mu}
+        \Vertex[Pseudo,x=0.,y=1,color=white]{Mr}
+        \Edge[style=red](M12)(M2)
+        \Edge[style=green](M12)(M1)
+        \Edge[style=green](M2)(M0)
+        \Edge[style=red](M1)(M0)
+        \Edge[style=gray](M2)(M1)
+
+        
+% box 2
+        \Vertex[label=$ \mathrm{M}_{0}$,x=-2 ,y=0, opacity=0.2,color=black]{M12a}
+        \Vertex[label=$ \mathrm{M}_{2}$,x=-2,y=2,opacity=0.2,color=black]{M2a}
+        \Vertex[label=$ \mathrm{M}_{1}$,x=0,y=0,opacity=0.2,color=black]{M1a}
+        \Vertex[label=$ \mathrm{M}_{12}$,x=0,y=2,opacity=0.2,color=black]{M0a}
+        \Vertex[Pseudo,x=-1,y=4,color=white]{Mda}
+        \Vertex[Pseudo,x=0,y=5,color=white]{Mra}
+        \Edge[style=green](M12a)(M2a)
+        \Edge[style=red](M12a)(M1a)
+        \Edge[style=red](M2a)(M0a)
+        \Edge[style=green](M1a)(M0a)
+        \Edge[style=gray](M2a)(M1a)
+        
+% box 3
+        \Vertex[label=$ \mathrm{M}_{12}$,x=2 ,y=4, opacity=0.2,color=black]{M12b}
+        \Vertex[label=$ \mathrm{M}_{1}$,x=2,y=6,opacity=0.2,color=black]{M2b}
+        \Vertex[label=$ \mathrm{M}_{2}$,x=4,y=4,opacity=0.2,color=black]{M1b}
+        \Vertex[label=$ \mathrm{M}_{0}$,x=4,y=6,opacity=0.2,color=black]{M0b}
+        \Vertex[Pseudo,x=3,y=2.,color=white]{Mub}
+        \Vertex[Pseudo,x=2,y=1,color=white]{Mlb}
+        \Edge[style=green](M12b)(M2b)
+        \Edge[style=red](M12b)(M1b)
+        \Edge[style=red](M2b)(M0b)
+        \Edge[style=green](M1b)(M0b)
+        \Edge[style=gray](M2b)(M1b) 
+
+% box 4
+        \Vertex[label=$ \mathrm{M}_{0}$,x=2 ,y=0, opacity=0.2,color=black]{M12b}
+        \Vertex[label=$ \mathrm{M}_{1}$,x=2,y=2,opacity=0.2,color=black]{M2b}
+        \Vertex[label=$ \mathrm{M}_{2}$,x=4,y=0,opacity=0.2,color=black]{M1b}
+        \Vertex[label=$ \mathrm{M}_{12}$,x=4,y=2,opacity=0.2,color=black]{M0b}
+        \Vertex[Pseudo,x=3,y=4,color=white]{Mdc}
+        \Vertex[Pseudo,x=2,y=5,color=white]{Mlc}
+        \Edge[style=red](M12b)(M2b)
+        \Edge[style=green](M12b)(M1b)
+        \Edge[style=green](M2b)(M0b)
+        \Edge[style=red](M1b)(M0b)
+        \Edge[style=gray](M2b)(M1b) 
+
+% Permutations and rotations
+    \Edge[Direct,lw=2.5,color=blue!60](Mda)(Mu)
+    \Text[x=-1.5,y=3]{$\sigma_{12,0}$}
+    \Edge[Direct,lw=2.5,color=gray!60](Mr)(Mlb)
+    \Text[x=1,y=0.75]{$\sigma_{21}$} 
+    \Edge[Direct,lw=2.5,color=blue!69](Mdc)(Mub)
+    \Text[x=3.5,y=3]{$\sigma_{12,0}$}
+    \Edge[Direct,lw=2.5,color=gray!60](Mra)(Mlc)
+    \Text[x=1,y=5.25]{$\sigma_{21}$}    
+    
+    \end{tikzpicture}
+    \caption{Effect of the permutations $\sigma_{12,0}$ and $\sigma_{21}$ on the graph $G_2$.}
+    \label{fig:sigma_rho_diprotic}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \begin{tikzpicture}
+%Box 0 upper left
+    \Vertex[label=${ \mathrm{M}_{{S}_3}}$,x=-3,y=1, opacity=0.2,color=black]{MS3a} 
+    \Vertex[label=${ \mathrm{M}_{23}}$,x=-2,y=2,opacity=0.2,color=black]{M23a}
+    \Vertex[label=${ \mathrm{M}_{13}}$,x=-1.5,y=1,opacity=0.2,color=black]{M13a}
+    \Vertex[label=${ \mathrm{M}_{12}}$,x=-2,y=0,opacity=0.2,color=black]{M12a}
+    \Vertex[label=${ \mathrm{M}_3}$,x=0.,y=2,opacity=0.2,color=black]{M3a}
+    \Vertex[label=$ \mathrm{M}_2$,x=-0.5,y=1,opacity=0.2,color=black]{M2a}
+    \Vertex[label=$ \mathrm{M}_1$,x=0.,y=0,opacity=0.2,color=black]{M1a}
+    \Vertex[label=$ \mathrm{M}_0$,x=1,y=1,opacity=0.2,color=black]{M0a}
+    
+    \Vertex[Pseudo,x=-1,y=0]{downa1}
+    \Vertex[Pseudo,x=0.5,y=0.5]{downa2}
+    \Vertex[Pseudo,x=0.5,y=1.75]{downa3}
+
+
+    \Edge[style=red](MS3a)(M23a)
+    \Edge[style={gray,dashed}](M23a)(M12a)
+    \Edge[style=green](MS3a)(M13a)
+    \Edge[style=blue](MS3a)(M12a)
+    \Edge[style=gray](M23a)(M13a)
+    \Edge[style=gray](M13a)(M12a)
+
+    \Edge[style=green](M23a)(M3a)
+    \Edge[style={blue,dashed}](M23a)(M2a)
+    \Edge[style=red](M13a)(M3a)
+
+    \Edge[style={red,dashed}](M12a)(M2a)
+    \Edge[style=blue](M13a)(M1a)
+    \Edge[style=green](M12a)(M1a) 
+
+    \Edge[style={gray,dashed}](M2a)(M3a)
+    \Edge[style={green,dashed}](M2a)(M0a)
+    \Edge[style=gray](M3a)(M1a)
+    \Edge[style={gray,dashed}](M2a)(M1a)
+   
+    \Edge[style=blue](M3a)(M0a)
+    \Edge[style=red](M1a)(M0a)
+%Box down left
+    \Vertex[label=${ \mathrm{M}_{{S}_3}}$, x=-3,y=-3,opacity=0.2,color=black]{MS3b} 
+    \Vertex[label=${ \mathrm{M}_{23}}$,x=-2,y=-2,opacity=0.2,color=black]{M23b}
+    \Vertex[label=${ \mathrm{M}_{12}}$,x=-1.5,y=-3,opacity=0.2,color=black]{M12b}
+    \Vertex[label=${ \mathrm{M}_{13}}$,x=-2,y=-4,opacity=0.2,color=black]{M13b}
+    \Vertex[label=${ \mathrm{M}_2}$,x=0,y=-2,opacity=0.2,color=black]{M2b}
+    \Vertex[label=$ \mathrm{M}_3$,x=-0.5,y=-3,opacity=0.2,color=black]{M3b}
+    \Vertex[label=$ \mathrm{M}_1$,x=0,y=-4,opacity=0.2,color=black]{M1b}
+    \Vertex[label=$ \mathrm{M}_0$,x=1,y=-3,opacity=0.2,color=black]{M0b}
+
+    \Vertex[Pseudo,x=-1,y=-2]{upb}
+
+    \Edge[style=red](MS3b)(M23b)
+    \Edge[style={gray}](M23b)(M12b)
+    \Edge[style=green](MS3b)(M13b)
+    
+    \Edge[style={gray,dashed}](M23b)(M13b)
+    \Edge[style=gray](M13b)(M12b)
+    \Edge[style=blue](MS3b)(M12b)
+
+    \Edge[style={green,dashed}](M23b)(M3b)
+    \Edge[style={blue}](M23b)(M2b)
+    \Edge[style={red,dashed}](M13b)(M3b)
+    \Edge[style={red}](M12b)(M2b)
+    \Edge[style=blue](M13b)(M1b)
+    \Edge[style=green](M12b)(M1b) 
+    \Edge[style={gray,dashed}](M2b)(M3b)
+    \Edge[style={green}](M2b)(M0b)
+    \Edge[style={gray,dashed}](M3b)(M1b)
+    \Edge[style={blue,dashed}](M3b)(M0b)
+    \Edge[style={gray}](M2b)(M1b)
+    
+    \Edge[style=red](M1b)(M0b)
+
+%&Box up right
+
+    \Vertex[label=${ \mathrm{M}_{{S}_3}}$, x=3,y=1,opacity=0.2,color=black]{MS3c} 
+    \Vertex[label=${ \mathrm{M}_{13}}$,x=4,y=2,opacity=0.2,color=black]{M13c}
+    \Vertex[label=${ \mathrm{M}_{23}}$,x=4.5,y=1,opacity=0.2,color=black]{M23c}
+    \Vertex[label=${ \mathrm{M}_{12}}$,x=4,y=0,opacity=0.2,color=black]{M12c}
+    \Vertex[label=${ \mathrm{M}_3}$,x=6,y=2,opacity=0.2,color=black]{M3c}
+    \Vertex[label=$ \mathrm{M}_1$,x=5.5,y=1,opacity=0.2,color=black]{M1c}
+
+    \Vertex[label=$ \mathrm{M}_2$,x=6,y=0,opacity=0.2,color=black]{M2c}
+    \Vertex[label=$ \mathrm{M}_0$,x=7,y=1,opacity=0.2,color=black]{M0c}
+    \Vertex[Pseudo,x=3.5,y=-2.5]{leftc}
+
+
+    \Edge[style={blue}](MS3c)(M12c)
+    
+    \Edge[style={gray,dashed}](M13c)(M12c)
+    \Edge[style=green](MS3c)(M13c)
+    \Edge[style={gray}](M23c)(M13c)
+    \Edge[style=gray](M23c)(M12c)
+    \Edge[style=red](MS3c)(M23c) 
+    
+    \Edge[style={red}](M13c)(M3c)
+    \Edge[style={red}](M12c)(M2c)
+    \Edge[style={blue,dashed}](M13c)(M1c)
+    \Edge[style={green,dashed}](M12c)(M1c) 
+    \Edge[style={blue}](M23c)(M2c)
+    \Edge[style={green}](M23c)(M3c)
+
+    
+    \Edge[style={green}](M2c)(M0c)
+    \Edge[style={gray,dashed}](M3c)(M1c)
+    
+    \Edge[style={blue}](M3c)(M0c)
+    \Edge[style={gray,dashed}](M2c)(M1c)
+    \Edge[style={red,dashed}](M1c)(M0c)
+    \Edge[style={gray}](M2c)(M3c)
+%Box down right
+    \Vertex[label=$ \mathrm{M}_{0}$,x=3,y=-3,opacity=0.2,color=black]{M0d} 
+    \Vertex[label=${ \mathrm{M}_{3}}$,x=4,y=-2,opacity=0.2,color=black]{M3d}
+    \Vertex[label=${ \mathrm{M}_{2}}$,x=4.5,y=-3,opacity=0.2,color=black]{M2d}
+    \Vertex[label=${ \mathrm{M}_{1}}$,x=4,y=-4,opacity=0.2,color=black]{M1d}
+    \Vertex[label=${ \mathrm{M}_{23}}$,x=6,y=-2,opacity=0.2,color=black]{M23d}
+    \Vertex[label=$ \mathrm{M}_{13}$,x=5.5,y=-3,opacity=0.2,color=black]{M13d}
+    \Vertex[label=$ \mathrm{M}_{12}$,x=6,y=-4,opacity=0.2,color=black]{M12d}
+    \Vertex[label=$ \mathrm{M}_{S_3}$,x=7,y=-3,opacity=0.2,color=black]{MS3d}
+
+    \Vertex[Pseudo,x=3.5,y=1.75]{leftd}
+
+    \Edge[style=red](MS3d)(M23d)
+
+
+
+    
+        \Edge[style={gray,dashed}](M23d)(M13d)
+        \Edge[style={green,dashed}](MS3d)(M13d)
+            \Edge[style={gray}](M23d)(M12d)
+    \Edge[style={blue}](MS3d)(M12d)
+    \Edge[style={gray,dashed}](M13d)(M12d)
+
+
+    \Edge[style={blue,dashed}](M13d)(M1d)
+    \Edge[style={green}](M12d)(M1d)
+  
+    \Edge[style={red}](M12d)(M2d)
+    \Edge[style={red,dashed}](M13d)(M3d)
+          \Edge[style={blue}](M23d)(M2d)
+    \Edge[style={green}](M23d)(M3d)
+    \Edge[style={gray}](M2d)(M3d)
+    \Edge[style={gray,dashed}](M3d)(M1d)
+    \Edge[style={green}](M2d)(M0d)
+    \Edge[style={gray}](M2d)(M1d)    
+    \Edge[style={blue}](M3d)(M0d)
+
+    \Edge[style=red](M1d)(M0d)
+% Joining permutations
+    \Edge[Direct, style=green!60,lw=2.5](downa1)(upb)
+    \Text[x=-1.9,y=-1]{$\sigma_{12,13}\sigma_{2,3}$}
+    \Edge[Direct, style=red!60,lw=2.5](downa3)(leftd)
+    \Text[x=2,y=2.1]{$\sigma_{13,23}\sigma_{1,2}$}
+    \Edge[Direct, style=blue!60,lw=2.5](downa2)(leftc)
+    \Text[x=2.2,y=-0.7,rotation=-45]{$\sigma_{S_3,0}\sigma_{12,1}\sigma_{13,2}\sigma_{23,3}$}
+    \end{tikzpicture}
+    \caption{Effect of the permutations $\sigma_{13,23}\sigma_{1,2}$, $\sigma_{12,13}\sigma_{2,3}$, and $\sigma_{S_3,0}\sigma_{12,1}\sigma_{13,2}\sigma_{23,3}$, on the graph $G_3$.}
+    \label{fig:effect_sigmas_G3}
+\end{figure}
+
